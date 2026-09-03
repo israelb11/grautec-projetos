@@ -13,9 +13,8 @@ class DataValidator:
         self.year = int(input("Digite o ano: "))
         self.leapYear = self.year % 4
 
-    # def validateData(self):
-
-    # Validação ano bisexto
+    def validateData(self):
+        # Validação ano bisexto
         if (self.mouth == 2):
             if (self.leapYear != 0) and (self.day > 28):
                 print("ERROR! DATA INVALIDA!")
@@ -45,15 +44,11 @@ class DataValidator:
             print("Insira uma data valida.")
             return
 
-    # def showResult(self):
+    def showResult(self):
         print(f"""{self.day}/{self.mouth}/{self.year}""")
         print("Ano bisexo" if (self.leapYear == 0) else "Ano não bisexto")
 
-        print(type(self.day))
-        print(type(self.mouth))
-        print(type(self.year))
-
 testaData = DataValidator()
 testaData.receiveData()
-# testaData.validateData()
-# testaData.showResult()
+testaData.validateData()
+testaData.showResult()
